@@ -18,15 +18,17 @@ public class User
         this.Id = Id;
         this.Name = Name;
         this.Email = Email;
-        this.Balance = Balance;
+        SetBalance(Balance);
         this.RegisterDate = DateTime.Now;
     }
 
-    public void SetBalance(decimal Balance){
-        if (Balance < 0)
-            this.Balance = 0;
-        else
-            this.Balance = Balance;
+    public void SetBalance(decimal amount){
+        decimal quantity = 0;
+
+        if (amount > 0)
+            quantity = amount;
+
+        this.Balance += quantity;
     }
 
     // Metodo para mostrar datos
@@ -34,5 +36,9 @@ public class User
         return $"Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate}.";
     }
 
+    // Metodo sobrecargado
+    public string ShowData(string initialMessage){
+        return $"{initialMessage} -> Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate}.";
+    }
 
 }
