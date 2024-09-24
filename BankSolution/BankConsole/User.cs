@@ -17,13 +17,18 @@ public class User
     protected DateTime RegisterDate { get; set; }
 
     // Constructores
+    public User() {}
+
     public User(int Id, string Name, string Email, decimal Balance)
     {
         this.Id = Id;
         this.Name = Name;
         this.Email = Email;
-        SetBalance(Balance);
         this.RegisterDate = DateTime.Now;
+    }
+
+    public DateTime GetRegisterDate(){
+        return this.RegisterDate;
     }
 
     public virtual void SetBalance(decimal amount){
@@ -37,7 +42,7 @@ public class User
 
     // Metodo para mostrar datos
     public virtual string ShowData(){
-        return $"Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate.ToShortDateString()}";
+        return $"ID: {this.Id}, Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate.ToShortDateString()}";
     }
 
     // Metodo sobrecargado

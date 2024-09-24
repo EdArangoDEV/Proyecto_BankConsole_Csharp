@@ -4,9 +4,12 @@ public class Employee : User, IPerson
 {
     public string Department { get; set; }
 
+    public Employee() { }
+
     public Employee(int Id, string Name, string Email, decimal Balance, string Department) : base(Id, Name, Email, Balance)
     {
         this.Department = Department;
+        SetBalance(Balance);
     }
 
 
@@ -14,13 +17,11 @@ public class Employee : User, IPerson
     {
         base.SetBalance(amount);
 
-        if (!string.IsNullOrEmpty(Department))
+        if (Department.Equals("IT"))
         {
-            if (Department.Equals("IT"))
-            {
-                Balance += (amount * 0.05m);
-            }
+            Balance += (amount * 0.05m);
         }
+
     }
 
     public override string ShowData()

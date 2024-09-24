@@ -4,10 +4,13 @@ public class Client : User, IPerson
 {
     private char TaxRegime { get; set; }
 
+    public Client() {}
+
     // constructor que implementa el constructor de la clase padre
     public Client(int Id, string Name, string Email, decimal Balance, char TaxRegime) : base(Id, Name, Email, Balance)
     {
         this.TaxRegime = TaxRegime;
+        SetBalance(Balance);
     }
 
     // sobrescritura de metedos
