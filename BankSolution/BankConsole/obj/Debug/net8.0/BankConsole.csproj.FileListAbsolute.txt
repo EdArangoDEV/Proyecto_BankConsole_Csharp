@@ -1,0 +1,14 @@
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\BankConsole.exe
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\BankConsole.deps.json
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\BankConsole.runtimeconfig.json
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\BankConsole.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\BankConsole.pdb
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.GeneratedMSBuildEditorConfig.editorconfig
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.AssemblyInfoInputs.cache
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.AssemblyInfo.cs
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.csproj.CoreCompileInputs.cache
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\refint\BankConsole.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.pdb
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.genruntimeconfig.cache
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\ref\BankConsole.dll
