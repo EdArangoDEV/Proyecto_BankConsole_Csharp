@@ -1,6 +1,6 @@
 namespace BankConsole;
 
-public class Employee : User
+public class Employee : User, IPerson
 {
     public string Department { get; set; }
 
@@ -28,5 +28,13 @@ public class Employee : User
         return base.ShowData() + $", Departamento: {this.Department}";
     }
 
+    public string GetName()
+    {
+        return this.Name + "!";
+    }
 
+    public string GetCountry()
+    {
+        throw new NotImplementedException();
+    }
 }

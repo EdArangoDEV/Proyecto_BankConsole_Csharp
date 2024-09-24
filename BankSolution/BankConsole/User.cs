@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 
 namespace BankConsole;
 
-public class User : Person
+public class User 
 {
     // para serializar propiedades privadas
     [JsonProperty]
@@ -45,8 +45,4 @@ public class User : Person
         return $"{initialMessage} -> Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate}";
     }
 
-    public override string GetName()
-    {
-        return this.Name;
-    }
 }

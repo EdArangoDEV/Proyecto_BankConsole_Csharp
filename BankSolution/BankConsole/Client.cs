@@ -1,6 +1,6 @@
 namespace BankConsole;
 
-public class Client : User
+public class Client : User, IPerson
 {
     private char TaxRegime { get; set; }
 
@@ -24,6 +24,13 @@ public class Client : User
         return base.ShowData() + $", Regimen Fiscal: {this.TaxRegime}";
     }
 
+    public string GetName()
+    {
+        return this.Name;
+    }
 
-
+    public string GetCountry()
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -10,3 +10,10 @@ public abstract class Person
     }
 
 }
+
+// definicion de Interface
+public interface IPerson
+{
+    string GetName();
+    string GetCountry();
+}
