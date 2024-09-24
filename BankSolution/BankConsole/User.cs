@@ -2,25 +2,21 @@ using Newtonsoft.Json;
 
 namespace BankConsole;
 
-public class User
+public class User : Person
 {
     // para serializar propiedades privadas
     [JsonProperty]
-    private int Id { get; set; }
+    protected int Id { get; set; }
     [JsonProperty]
-    private string Name { get; set; }
+    protected string Name { get; set; }
     [JsonProperty]
-    private string Email { get; set; }
+    protected string Email { get; set; }
     [JsonProperty]
-    private decimal Balance { get; set; }
+    protected decimal Balance { get; set; }
     [JsonProperty]
-    private DateTime RegisterDate { get; set; }
+    protected DateTime RegisterDate { get; set; }
 
     // Constructores
-    public User(){
-        this.Balance = 1000;
-    }
-
     public User(int Id, string Name, string Email, decimal Balance)
     {
         this.Id = Id;
@@ -30,7 +26,7 @@ public class User
         this.RegisterDate = DateTime.Now;
     }
 
-    public void SetBalance(decimal amount){
+    public virtual void SetBalance(decimal amount){
         decimal quantity = 0;
 
         if (amount > 0)
@@ -40,13 +36,17 @@ public class User
     }
 
     // Metodo para mostrar datos
-    public string ShowData(){
-        return $"Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate}.";
+    public virtual string ShowData(){
+        return $"Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate.ToShortDateString()}";
     }
 
     // Metodo sobrecargado
     public string ShowData(string initialMessage){
-        return $"{initialMessage} -> Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate}.";
+        return $"{initialMessage} -> Nombre: {this.Name}, Correo: {this.Email}, Saldo: {this.Balance}, Fecha de Registro: {this.RegisterDate}";
     }
 
+    public override string GetName()
+    {
+        return this.Name;
+    }
 }

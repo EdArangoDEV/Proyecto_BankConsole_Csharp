@@ -1,16 +1,22 @@
 ﻿using BankConsole;
 
-User james = new User(1,"James", "james@gmail.com", 4000);
-james.SetBalance(100);
+Client james = new Client(1,"James", "james@gmail.com", 4000, 'M');
+james.SetBalance(2000);
 
-Console.WriteLine(james.ShowData("La informacion del usuario es la siguiente"));
+Console.WriteLine(james.ShowData());
 
-Storage.AddUser(james);
+Employee pedro = new Employee(2,"pedro", "pedro@gmail.com", 4000, "IT");
+pedro.SetBalance(2000);
 
-User pedro = new User(2,"Pedro","pedro@hotmail.com", 2500);
-Storage.AddUser(pedro);
+Console.WriteLine(pedro.ShowData());
 
-//Console.WriteLine(pedro.ShowData());
+
+// Storage.AddUser(james);
+
+// User pedro = new User(2,"Pedro","pedro@hotmail.com", 2500);
+// Storage.AddUser(pedro);
+
+// Console.WriteLine(pedro.ShowData());
 
 
 
