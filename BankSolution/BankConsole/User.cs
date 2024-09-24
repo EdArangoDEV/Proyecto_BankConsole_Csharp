@@ -1,11 +1,19 @@
+using Newtonsoft.Json;
+
 namespace BankConsole;
 
 public class User
 {
+    // para serializar propiedades privadas
+    [JsonProperty]
     private int Id { get; set; }
+    [JsonProperty]
     private string Name { get; set; }
+    [JsonProperty]
     private string Email { get; set; }
+    [JsonProperty]
     private decimal Balance { get; set; }
+    [JsonProperty]
     private DateTime RegisterDate { get; set; }
 
     // Constructores
