@@ -13,3 +13,6 @@
 	-- comando : dotnet add package Newtonsoft.Json --version 13.0.3
 
 	-- serializacion: convertir de Objeto a JSON
+
+-- Agregar paquete de Nuget
+	-- comando : dotnet add package MailKit --version 4.7.1.1
