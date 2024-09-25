@@ -11,7 +11,14 @@
     "Id": 2,
     "Name": "pedro",
     "Email": "pedro@gmail.com",
-    "Balance": 4200.00,
+    "Balance": 4200.0,
     "RegisterDate": "2024-09-24T12:44:20.6968707-06:00"
+  },
+  {
+    "Id": 20,
+    "Name": "Eduardo",
+    "Email": "eduardo@gmail.com",
+    "Balance": 3000.0,
+    "RegisterDate": "2024-09-25T16:41:10.8490562-06:00"
   }
 ]
