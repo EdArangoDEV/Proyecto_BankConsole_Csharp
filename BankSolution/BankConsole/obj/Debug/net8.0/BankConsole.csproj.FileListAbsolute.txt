@@ -12,3 +12,12 @@ D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0
 D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.pdb
 D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.genruntimeconfig.cache
 D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\ref\BankConsole.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.sourcelink.json
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\Newtonsoft.Json.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankConsole.csproj.AssemblyReference.cache
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\obj\Debug\net8.0\BankCons.9D09B4EA.Up2Date
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\MailKit.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\MimeKit.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll
