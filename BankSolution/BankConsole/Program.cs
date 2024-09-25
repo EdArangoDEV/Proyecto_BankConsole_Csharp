@@ -17,7 +17,7 @@
 
 
 if (args.Length == 0)
-    Console.WriteLine("Enviar correo...");
+    EmailService.SendMail();
 else
     Console.WriteLine("tercer argumento: " + args[2]);
 
