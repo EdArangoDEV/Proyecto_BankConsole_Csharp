@@ -8,4 +8,8 @@
 	-- dotnet new sln : para crear nueva solucion
 	-- dotnet new console -o BankConsole : para crear proyecto de consola
 	-- dotnet sln add BankConsole/BankConsole.csproj : para agregar proyecto a la solucion
-	
+
+-- Agregar paquete de Nuget 
+	-- comando : dotnet add package Newtonsoft.Json --version 13.0.3
+
+	-- serializacion: convertir de Objeto a JSON
