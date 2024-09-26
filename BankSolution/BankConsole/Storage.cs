@@ -7,42 +7,23 @@ public static class Storage
 {
     // Ubicacion de archivo
     // static string filePath = AppDomain.CurrentDomain.BaseDirectory + @"\users.json";
-    static string filePath = @"D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\users.json";
-
-    public static void AddUser(User user){
-        string json = "", usersInFile = "";
-
-        if (File.Exists(filePath))
-            usersInFile = File.ReadAllText(filePath);
-
-        var listUsers = JsonConvert.DeserializeObject<List<object>>(usersInFile);
-
-        if (listUsers == null)
-            listUsers = new List<object>();
-
-        listUsers.Add(user);
-
-        JsonSerializerSettings settings = new JsonSerializerSettings {Formatting = Formatting.Indented};
-        
-        // serializacion de Objeto a JSON
-        json = JsonConvert.SerializeObject(listUsers, settings);
-
-        File.WriteAllText(filePath, json);
-
-    }
+    static readonly string filePath = @"D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\users.json";
 
 
-    public static List<User> GetNewUsers(){
+    public static List<object> ObtenerLisObject()
+    {
         string usersInFile = "";
-        var listUsers = new List<User>();
 
         if (File.Exists(filePath))
             usersInFile = File.ReadAllText(filePath);
 
         var listObjects = JsonConvert.DeserializeObject<List<object>>(usersInFile);
 
-        if (listObjects == null)
-            return listUsers;
+        return listObjects;
+    }
+
+    public static List<User> ConvertList(List<object> listObjects){
+        var listUsers = new List<User>();
 
         foreach (object obj in listObjects)
         {
@@ -51,11 +32,59 @@ public static class Storage
 
             if (user.ContainsKey("TaxRegime"))
                 newUser = user.ToObject<Client>();
-            else 
+            else
                 newUser = user.ToObject<Employee>();
 
             listUsers.Add(newUser);
-        }    
+        }
+
+        return listUsers;
+    }
+
+
+    public static List<User> ObtenerListaUser()
+    {
+        var listUsers = new List<User>();
+
+        var listObjects = ObtenerLisObject();
+
+        if (listObjects == null)
+            return listUsers;
+
+        listUsers = ConvertList(listObjects);
+
+        return listUsers;
+    }
+
+
+    public static void WriteFormatoJSON(List<User> list)
+    {
+        JsonSerializerSettings settings = new JsonSerializerSettings { Formatting = Formatting.Indented };
+
+        // serializacion de Objeto a JSON
+        string json = JsonConvert.SerializeObject(list, settings);
+
+        File.WriteAllText(filePath, json);
+    }
+
+
+    public static void AddUser(User user)
+    {
+        var listUsers = new List<User>();
+        var listObjects = ObtenerLisObject();
+
+        if (listObjects != null)
+            listUsers = ConvertList(listObjects);
+
+        listUsers.Add(user);
+
+        WriteFormatoJSON(listUsers);
+    }
+
+
+    public static List<User> GetNewUsers()
+    {
+        var listUsers = ObtenerListaUser();
 
         var newUserList = listUsers.Where(user => user.GetRegisterDate().Date.Equals(DateTime.Today)).ToList();
 
@@ -63,42 +92,15 @@ public static class Storage
     }
 
 
-    public static string DeleteUser(int Id){
-        
-        string usersInFile = "";
-        var listUsers = new List<User>();
-
-        if (File.Exists(filePath))
-            usersInFile = File.ReadAllText(filePath);
-
-        var listObjects = JsonConvert.DeserializeObject<List<object>>(usersInFile);
-
-        if (listObjects == null)
-            return "No hay usuarios en el archivo";
-
-        foreach (object obj in listObjects)
-        {
-            User newUser;
-            JObject user = (JObject)obj;
-
-            if (user.ContainsKey("TaxRegime"))
-                newUser = user.ToObject<Client>();
-            else 
-                newUser = user.ToObject<Employee>();
-
-            listUsers.Add(newUser);
-        }
+    public static string DeleteUser(int Id)
+    {
+        var listUsers = ObtenerListaUser();
 
         var userToDelete = listUsers.Where(user => user.GetId() == Id).Single();
 
         listUsers.Remove(userToDelete);
 
-        JsonSerializerSettings settings = new JsonSerializerSettings {Formatting = Formatting.Indented};
-        
-        // serializacion de Objeto a JSON
-        string json = JsonConvert.SerializeObject(listUsers, settings);
-
-        File.WriteAllText(filePath, json);
+        WriteFormatoJSON(listUsers);
 
         return "Success";
     }

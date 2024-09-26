@@ -1,7 +1,4 @@
-﻿using System.Data;
-using System.Diagnostics.CodeAnalysis;
-using System.Security.Cryptography.X509Certificates;
-using BankConsole;
+﻿using BankConsole;
 
 //Client james = new Client(1,"James", "james@gmail.com", 4000, 'M');
 //Console.WriteLine(james.ShowData());
