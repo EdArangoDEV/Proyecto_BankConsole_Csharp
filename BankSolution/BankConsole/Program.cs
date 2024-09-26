@@ -50,7 +50,7 @@ static void ShowMenu()
             CreateUser();
             break;
         case 2: 
-            //DeleteUser();
+            DeleteUser();
             break;
         case 3:
             Console.Clear();
@@ -80,21 +80,21 @@ static void CreateUser(){
     Console.Write("Saldo: ");
     decimal balance = decimal.Parse(Console.ReadLine());
 
-    Console.Write("Escribe 'c' si el usuario es Cliente o 'e' si el usuario es empleado; ");
+    Console.Write("Escribe 'c' si el usuario es Cliente o 'e' si el usuario es empleado: ");
     char userType = char.Parse(Console.ReadLine());
 
     User newUser;
 
     if (userType.Equals('c'))
     {
-        Console.Write("Escribe el regimen Fiscal:");
+        Console.Write("Escribe el regimen Fiscal: ");
         char taxRegime = char.Parse(Console.ReadLine());
 
         newUser = new Client(Id, name, email, balance, taxRegime);
     }
     else
     {
-        Console.Write("Escribe el Departamento");
+        Console.Write("Escribe el Departamento: ");
         string department = Console.ReadLine();
 
         newUser = new Employee(Id, name, email, balance, department);
@@ -102,10 +102,26 @@ static void CreateUser(){
 
     Storage.AddUser(newUser);
 
-    Console.WriteLine("Usuario creado...");
+    Console.WriteLine("\nUsuario creado...");
     Thread.Sleep(2000);
     ShowMenu();
 }
 
 
+static void DeleteUser(){
 
+    Console.Clear();
+
+    Console.Write("Ingrese el Id del usuario a eliminar: ");
+    int Id = int.Parse(Console.ReadLine());
+
+    string result = Storage.DeleteUser(Id);
+
+    if (result.Equals("Success"))
+    {
+        Console.WriteLine("Usuario eliminado...");
+        Thread.Sleep(2000);
+        ShowMenu();
+    }
+
+}

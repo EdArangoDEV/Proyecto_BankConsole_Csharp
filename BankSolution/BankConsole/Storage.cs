@@ -6,7 +6,8 @@ namespace BankConsole;
 public static class Storage
 {
     // Ubicacion de archivo
-    static string filePath = AppDomain.CurrentDomain.BaseDirectory + @"\users.json";
+    // static string filePath = AppDomain.CurrentDomain.BaseDirectory + @"\users.json";
+    static string filePath = @"D:\Documentos\EA\CURSOS JAMES\POO .NET\BankSolution\BankConsole\users.json";
 
     public static void AddUser(User user){
         string json = "", usersInFile = "";
@@ -59,6 +60,47 @@ public static class Storage
         var newUserList = listUsers.Where(user => user.GetRegisterDate().Date.Equals(DateTime.Today)).ToList();
 
         return newUserList;
+    }
+
+
+    public static string DeleteUser(int Id){
+        
+        string usersInFile = "";
+        var listUsers = new List<User>();
+
+        if (File.Exists(filePath))
+            usersInFile = File.ReadAllText(filePath);
+
+        var listObjects = JsonConvert.DeserializeObject<List<object>>(usersInFile);
+
+        if (listObjects == null)
+            return "No hay usuarios en el archivo";
+
+        foreach (object obj in listObjects)
+        {
+            User newUser;
+            JObject user = (JObject)obj;
+
+            if (user.ContainsKey("TaxRegime"))
+                newUser = user.ToObject<Client>();
+            else 
+                newUser = user.ToObject<Employee>();
+
+            listUsers.Add(newUser);
+        }
+
+        var userToDelete = listUsers.Where(user => user.GetId() == Id).Single();
+
+        listUsers.Remove(userToDelete);
+
+        JsonSerializerSettings settings = new JsonSerializerSettings {Formatting = Formatting.Indented};
+        
+        // serializacion de Objeto a JSON
+        string json = JsonConvert.SerializeObject(listUsers, settings);
+
+        File.WriteAllText(filePath, json);
+
+        return "Success";
     }
 
 }

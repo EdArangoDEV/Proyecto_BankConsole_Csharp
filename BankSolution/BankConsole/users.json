@@ -1,0 +1,10 @@
+[
+  {
+    "Department": "It",
+    "Id": 10,
+    "Name": "Luis",
+    "Email": "luis@gmail.com",
+    "Balance": 300.0,
+    "RegisterDate": "2024-09-26T10:10:51.8834287-06:00"
+  }
+]
